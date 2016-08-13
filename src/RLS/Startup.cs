@@ -13,6 +13,7 @@ using RLS.Data;
 using RLS.Models;
 using RLS.Services;
 using Microsoft.AspNetCore.Http;
+using RLS.Extensions;
 
 namespace RLS
 {
@@ -43,7 +44,7 @@ namespace RLS
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor > ();
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServerRLS(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

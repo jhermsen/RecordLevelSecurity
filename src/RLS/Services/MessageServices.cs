@@ -18,7 +18,6 @@ namespace RLS.Services
 
         public Task SendSmsAsync(string number, string message)
         {
-            Microsoft.EntityFrameworkCore.SqlServerDbContextOptionsExtensions
             // Plug in your SMS service here to send a text message.
             return Task.FromResult(0);
         }
